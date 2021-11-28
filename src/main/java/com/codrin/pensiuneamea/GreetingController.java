@@ -17,3 +17,4 @@ import org.springframework.web.bind.annotation.RestController;
             return new Greeting(counter.incrementAndGet(), String.format(template, name));
         }
     }
+
