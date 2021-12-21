@@ -1,14 +1,16 @@
 package com.codrin.pensiuneamea.models;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Reservation {
     private long id;
     private String guestName;
-    private String begin_date, end_date;
+    private LocalDate begin_date;
+    private LocalDate end_date;
     private int state;
 
-    public Reservation(long id, String guestName, String begin_date, String end_date, int state) {
+    public Reservation(long id, String guestName, LocalDate begin_date, LocalDate end_date, int state) {
         this.id = id;
         this.guestName = guestName;
         this.begin_date = begin_date;
@@ -24,11 +26,11 @@ public class Reservation {
         return guestName;
     }
 
-    public String getBegin_date() {
+    public LocalDate getBegin_date() {
         return begin_date;
     }
 
-    public String getEnd_date() {
+    public LocalDate getEnd_date() {
         return end_date;
     }
 
