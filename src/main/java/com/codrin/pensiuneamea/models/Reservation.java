@@ -1,24 +1,49 @@
 package com.codrin.pensiuneamea.models;
 
+import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.Date;
 
+@Entity
+@Table(name = "reservation")
 public class Reservation {
-    private long id;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false, length = 15)
+    private String phoneNumber;
+
+    @Column(nullable = false, length = 45)
     private String guestName;
+
+    @Column(nullable = false)
     private LocalDate begin_date;
+
+    @Column(nullable = false)
     private LocalDate end_date;
+
+    @Column(nullable = false)
     private int state;
 
-    public Reservation(long id, String guestName, LocalDate begin_date, LocalDate end_date, int state) {
+    public Reservation() {
+
+    }
+
+    public Reservation(Long id, String phoneNumber, String guestName, LocalDate begin_date, LocalDate end_date, int state) {
         this.id = id;
+        this.phoneNumber = phoneNumber;
         this.guestName = guestName;
         this.begin_date = begin_date;
         this.end_date = end_date;
         this.state = state;
     }
 
-    public long getId() {
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public Long getId() {
         return id;
     }
 
@@ -36,5 +61,29 @@ public class Reservation {
 
     public int getState() {
         return state;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public void setGuestName(String guestName) {
+        this.guestName = guestName;
+    }
+
+    public void setBegin_date(LocalDate begin_date) {
+        this.begin_date = begin_date;
+    }
+
+    public void setEnd_date(LocalDate end_date) {
+        this.end_date = end_date;
+    }
+
+    public void setState(int state) {
+        this.state = state;
     }
 }
