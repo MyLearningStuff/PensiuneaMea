@@ -4,7 +4,7 @@ Pornim de la ideea ca avem o pensiune cu 5 camere fiecare individual configurate
 
 Fiecare camera poate avea statusul 1-disponibil, 2-rezervat si 3-ocupat.
 
-Rezervarea se va face pe baza numarului de telefon si a e-mail-ului, numarul de telefon fiind obligatoriu
+Rezervarea se va face pe baza numarului de telefon, numarul de telefon fiind obligatoriu
 
 
 
