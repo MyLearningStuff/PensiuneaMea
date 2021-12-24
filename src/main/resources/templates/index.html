@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Booking Management System</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+<div class="container my-2">
+    <h1>Bookings List</h1>
+
+    <a th:href="@{/showNewBookingForm}" class="btn btn-primary btn-sm mb-3"> Add Booking </a>
+
+    <table border="1" class="table table-striped table-responsive-md">
+        <thead>
+        <tr>
+            <th>PhoneNumber</th>
+            <th>GuestName</th>
+            <th>Begin_date</th>
+            <th>End_date</th>
+            <th>State</th>
+
+            <th> Actions </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="booking : ${listBookings}">
+            <td th:text="${booking.getPhoneNumber()}"></td>
+            <td th:text="${booking.getGuestName()}"></td>
+            <td th:text="${booking.getBegin_date()}"></td>
+            <td th:text="${booking.getEnd_date()}"></td>
+            <td th:text="${booking.getState()}"></td>
+            <td> <a th:href="@{/showFormForUpdate/{id}(id=${booking.id})}" class="btn btn-primary">Update</a>
+                <a th:href="@{/deleteBooking/{id}(id=${booking.id})}" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+
+</html>
